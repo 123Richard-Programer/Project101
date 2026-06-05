@@ -1,6 +1,353 @@
-h1{
-color: blue;
-text-align: center;
-
+/* ==========================================================================
+   1. GLOBAL RESET & EXPERT CORE TYPOGRAPHY
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding doesn't break element sizing */
 }
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* High-readability offline fonts */
+    line-height: 1.6;
+    color: #1e293b;
+    background-color: #f8fafc;
+}
+
+/* ==========================================================================
+   2. STICKY NAVIGATION BAR ARCHITECTURE (With Hover Dynamics)
+   ========================================================================== */
+header {
+    background-color: #0f172a; /* Deep Slate Blue */
+    padding: 18px 6%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 4px solid #d97706; /* Premium Corporate Gold Accent */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.brand-logo span {
+    color: #fbbf24; /* Vivid Gold Highlight */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Hover dynamics required by project instructions */
+nav ul li a:hover, 
+nav ul li a.active-link {
+    color: #ffffff;
+    background-color: #1e293b;
+    border-bottom: 2px solid #fbbf24;
+}
+
+/* ==========================================================================
+   3. CORPORATE HERO SECTION
+   ========================================================================== */
+.hero-banner {
+    background-color: #1e293b;
+    color: #ffffff;
+    padding: 90px 6%;
+    text-align: center;
+}
+
+.hero-banner h1 {
+    font-size: 44px;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+.hero-banner p {
+    font-size: 18px;
+    color: #cbd5e1;
+    max-width: 720px;
+    margin: 0 auto 30px auto;
+}
+
+/* ==========================================================================
+   4. STRUCTURAL GRID COMPONENTS (Cards & Sections)
+   ========================================================================== */
+.main-section {
+    padding: 70px 6%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #0f172a;
+    margin-bottom: 45px;
+    position: relative;
+    font-weight: 700;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 55px;
+    height: 4px;
+    background-color: #d97706;
+    margin: 12px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Flexbox Layout implementation for site features */
+.feature-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.corporate-card {
+    background-color: #ffffff;
+    flex: 1 1 calc(33.333% - 25px);
+    min-width: 290px;
+    padding: 35px 25px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, border-top 0.3s ease;
+    border-top: 4px solid #334155;
+}
+
+.corporate-card:hover {
+    transform: translateY(-6px);
+    border-top-color: #fbbf24;
+}
+
+.corporate-card h3 {
+    color: #0f172a;
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+/* ==========================================================================
+   5. REQUIRED FLEXBOX STUDENTS SYSTEM (Group Documentation Area)
+   ========================================================================== */
+.team-flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between; /* Even spatial distribution */
+}
+
+.student-card {
+    background-color: #ffffff;
+    flex: 1 1 calc(33.333% - 20px); /* 3 cards per row configuration */
+    min-width: 280px;
+    padding: 25px;
+    border-radius: 6px;
+    border-left: 5px solid #0f172a; /* Slate corporate stripe */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.student-card:hover {
+    border-left-color: #d97706; /* Shifts to gold accent on hover */
+    background-color: #fffbeb;
+}
+
+.student-card h4 {
+    font-size: 18px;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.student-card p {
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 4px;
+}
+
+.student-card .student-id {
+    font-weight: 700;
+    color: #d97706;
+}
+
+.student-card .student-role {
+    font-style: italic;
+    color: #64748b;
+}
+
+/* ==========================================================================
+   6. PREMIUM BUTTONS & CONTROLS
+   ========================================================================== */
+.btn-primary {
+    display: inline-block;
+    background-color: #d97706;
+    color: #ffffff;
+    padding: 12px 28px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #b45309;
+}
+
+/* Form inputs styling */
+.consulting-form {
+    background-color: #ffffff;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #d97706;
+    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+}
+
+/* ==========================================================================
+   7. FOOTER COMPONENT
+   ========================================================================== */
+
+
+
+/* ==========================================================================
+   8. PURE CSS INTERACTIVE ACCORDION SYSTEM (Syllabus Target Selector Jargon)
+   ========================================================================== */
+.details-trigger {
+    display: inline-block;
+    margin-top: 15px;
+    color: #d97706; /* Corporate Gold */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.details-trigger:hover {
+    color: #b45309;
+}
+
+/* Hidden state by default */
+.interactive-details-box {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    background-color: #f8fafc;
+    border-radius: 4px;
+    margin-top: 0;
+    padding: 0 15px;
+    text-align: left;
+    border-left: 0 solid #d97706;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Professional easing curve */
+}
+
+/* Core Technical Jargon: The :target pseudo-class triggers when the link is clicked */
+.interactive-details-box:target {
+    max-height: 500px; /* Expands to fit content */
+    opacity: 1;
+    margin-top: 15px;
+    padding: 20px;
+    border-left: 4px solid #d97706; /* Drops accent border */
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.interactive-details-box h5 {
+    color: #0f172a;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.interactive-details-box h5:first-of-type {
+    margin-top: 0;
+}
+
+.interactive-details-box p {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.close-trigger {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 12px;
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.close-trigger:hover {
+    color: #ef4444; /* Turns red on close hover */
+}
+
+
+footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 35px 6%;
+    margin-top: 70px;
+    border-top: 4px solid #1e293b;
+}
+
+
+footer p {
+    font-size: 14px;
+}
